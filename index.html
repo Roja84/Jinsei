@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>RESET</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- ICON -->
+<link rel="icon" type="image/png" sizes="32x32" href="logo_1er_jet.png">
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+    <p>ENTER</p>
+	<img id="image/png" src="logo reverse.png"/>
+    <div id="petals"></div>
+</div>
+
+<!-- AUDIO -->
+<audio id="bg-audio" loop>
+    <source src="Spring v2.mp3" type="audio/mpeg">
+</audio>
+
+<button id="sound-toggle">SON OFF</button>
+
+<audio id="enter-sound">
+    <source src="enter.mp3" type="audio/mpeg">
+</audio>
+
+<!-- HEADER -->
+<header>
+    <div class="logo" id="logo"> <img src="logo reverse.png"></div>
+    <nav>
+        <a href="#section1">Accueil</a>
+        <a href="#section2">Axe 1</a>
+        <a href="#section3">Axe 2</a>
+        <a href="#section4">Axe 3</a>
+    </nav>
+</header>
+
+
+<!-- DOT NAV -->
+<div id="nav-indicator">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+</div>
+
+<!-- MAIN -->
+<div id="main">
+
+<section class="panel" id="section1"><h1>Jinsei</h1></section>
+<section class="panel" id="section2"><h2>Axe 1</h2></section>
+<section class="panel" id="section3"><h2>Axe 2</h2></section>
+<section class="panel" id="section4"><h2>Axe 3</h2></section>
+
+<section class="panel footer-panel">
+    <footer>
+        <p>© Romain Jaume</p>
+    </footer>
+</section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
