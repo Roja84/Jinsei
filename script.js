@@ -125,9 +125,17 @@ function initScroll() {
         });
     });
 
-    function setActive(index) {
+    //function setActive(index) {
+        //document.querySelectorAll(".dot").forEach(d => d.classList.remove("active"));
+        //document.querySelectorAll(".dot")[index].classList.add("active");
+    //}
+	
+	function setActive(index) {
         document.querySelectorAll(".dot").forEach(d => d.classList.remove("active"));
+        document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
+
         document.querySelectorAll(".dot")[index].classList.add("active");
+        document.querySelectorAll("nav a")[index].classList.add("active");
     }
 
     document.querySelectorAll(".dot").forEach((dot, i) => {
