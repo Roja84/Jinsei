@@ -68,18 +68,18 @@ loader.addEventListener("click", () => {
     audio.volume = 100;
     audio.play();
     isPlaying = true;
-    audioBtn.textContent = "SON ON";
+    audioBtn.textContent = "🔊";
 });
 
 // AUDIO BUTTON
 audioBtn.onclick = () => {
     if (audio.paused) {
         audio.play();
-        audioBtn.textContent = "SON ON";
+        audioBtn.textContent = "🔊";
         isPlaying = true;
     } else {
         audio.pause();
-        audioBtn.textContent = "SON OFF";
+        audioBtn.textContent = "🔇";
         isPlaying = false;
     }
 };
