@@ -226,3 +226,48 @@ function resetSwitcher(panel) {
     contents[0].classList.add("active");
     controls[0].classList.add("active");
 }
+
+//const materials = document.querySelectorAll(".material");
+
+//materials.forEach((mat, index) => {
+
+    //mat.addEventListener("click", () => {
+
+        //materials.forEach(m => m.classList.remove("active"));
+
+        //mat.classList.add("active");
+
+    //});
+
+//});
+
+const materials = document.querySelectorAll(".material");
+
+function updateMaterials(activeIndex) {
+
+    materials.forEach((mat, i) => {
+
+        mat.classList.remove("active", "left", "right");
+
+        if (i === activeIndex) {
+            mat.classList.add("active");
+        }
+        else if (i < activeIndex) {
+            mat.classList.add("left");
+        }
+        else {
+            mat.classList.add("right");
+        }
+
+    });
+
+}
+
+materials.forEach((mat, index) => {
+    mat.addEventListener("click", () => {
+        updateMaterials(index);
+    });
+});
+
+// init
+updateMaterials(0);
