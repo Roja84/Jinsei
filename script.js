@@ -187,7 +187,7 @@ function initScroll() {
 
 // SWITCHERS
 
-const switchers = document.querySelectorAll(".content-switcher");
+const switchers = document.querySelectorAll(".content-switcher2");
 
 switchers.forEach(switcher => {
 
@@ -214,7 +214,7 @@ switchers.forEach(switcher => {
 
 function resetSwitcher(panel) {
 
-    let switcher = panel.querySelector(".content-switcher");
+    let switcher = panel.querySelector(".content-switcher2");
     if (!switcher) return;
 
     let contents = switcher.querySelectorAll(".content");
@@ -241,7 +241,7 @@ function resetSwitcher(panel) {
 
 //});
 
-const materials = document.querySelectorAll(".material");
+const materials = document.querySelectorAll(".material2");
 
 function updateMaterials(activeIndex) {
 
