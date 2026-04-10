@@ -367,6 +367,18 @@ nav a.active {
     object-fit: cover;
 }
 
+#noel-visu {
+	width: auto;
+    height: 500px;
+    object-fit: cover;
+}
+
+#noel-global {
+	width: auto;
+    height: 500px;
+    object-fit: cover;
+}
+
 
 .material2 img {
     width: 100%;
