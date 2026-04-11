@@ -5,6 +5,7 @@ const petalsContainer = document.getElementById("petals");
 const enterSound = document.getElementById("enter-sound");
 
 let isPlaying = false;
+let isScrolling = false;
 
 document.body.style.overflow = "hidden";
 
@@ -169,13 +170,25 @@ function initScroll() {
     document.querySelectorAll("nav a").forEach((link, i) => {
         link.addEventListener("click", e => {
             e.preventDefault();
+			
+			let targetId = link.getAttribute("href");
+			let target = document.querySelector(targetId);
+			
+			isScrolling = true; // 🔥 on bloque le reste
+			
             gsap.to(window, {
                 scrollTo: {
                     //y: i * window.innerHeight,
-					y: section,
+					y: target,
                     autoKill: false,
                 },
                 duration: 1,
+				overwrite: true, // 🔥 très important
+				onComplete: () => {
+        setTimeout(() => {
+            isScrolling = false;
+        }, 500);
+            }
             });
         });
     });
@@ -267,6 +280,29 @@ materials.forEach((mat, index) => {
     mat.addEventListener("click", () => {
         updateMaterials(index);
     });
+});
+
+const sections = document.querySelectorAll(".panel");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", (e) => {
+	
+	if (isScrolling) return; // 🔥 bloque pendant animation
+
+    let scrollPos = window.scrollY + window.innerHeight / 2;
+
+    sections.forEach((section, i) => {
+
+        if (
+            scrollPos >= section.offsetTop &&
+            scrollPos < section.offsetTop + section.offsetHeight
+        ) {
+            navLinks.forEach(link => link.classList.remove("active"));
+            navLinks[i].classList.add("active");
+        }
+
+    });
+
 });
 
 // init
