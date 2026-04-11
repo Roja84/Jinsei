@@ -284,8 +284,8 @@ nav a.active {
 .material2 {
     /*position: absolute;*/
 
-    width: clamp(80px, 4vw, 120px);
-	height: clamp(250px, 20vw, 350px);
+    width: /*clamp(80px, 4vw, 120px);*/6vw;
+	height: /*clamp(250px, 20vw, 350px);*/40vh;
 
     overflow: hidden;
     cursor: pointer;
@@ -303,92 +303,92 @@ nav a.active {
 
 #hanabi-earrings {
     width: auto;
-    height: 500px;
+    height: 60vh;
     object-fit: cover;
 }
 
 #earrings-tech {
     width: auto;
-    height: 500px;
+    height: 60vh;
     object-fit: cover;
 }
 
 #hanabi-ring {
     width: auto;
-    height: 500px;
+    height: 60vh;
     object-fit: cover;
 }
 
 #ring-tech {
     width: auto;
-    height: 500px;
+    height: 60vh;
     object-fit: cover;
 }
 
 #hanabi-bracelet {
     width: auto;
-    height: 500px;
+    height: 60vh;
     object-fit: cover;
 }
 
 #hanabi-bracelet2 {
     width: auto;
-    height: 500px;
+    height: 60vh;
     object-fit: cover;
 }
 
 #hanabi-pierres {
-    width: 500px;
+    width: 60vh;
     height: auto;
     object-fit: cover;
 }
 
 #hanabi-pierres2 {
     width: auto;
-    height: 500px;
+    height: 60vh;
     object-fit: cover;
 }
 
 
 #hanabi-pierres3 {
     width: auto;
-    height: 500px;
+    height: 60vh;
     object-fit: cover;
 }
 
 #hanabi-pierres4 {
     width: auto;
-    height: 500px;
+    height: 60vh;
     object-fit: cover;
 }
 
 .visual-video {
     width: auto;
-    height: 500px;
+    height: 60vh;
     object-fit: cover;
 }
 
 #pure {
-	width: 400px;
-    height: auto;
+	width: auto;
+    height: 55vh;
     object-fit: cover;
 }
 
 #pure2 {
-	width: 400px;
-    height: auto;
+	width: auto;
+    height: 55vh;
     object-fit: cover;
 }
 
 #noel-visu {
 	width: auto;
-    height: 500px;
+    height: 60vh;
     object-fit: cover;
 }
 
 #noel-global {
 	width: auto;
-    height: 500px;
+    height: 60vh;
     object-fit: cover;
 }
 
@@ -488,20 +488,6 @@ nav a.active {
     }
 
 }*/
-
-#rotate-screen {
-    position: fixed;
-    inset: 0;
-    background: black;
-    color: white;
-
-    display: none;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    z-index: 999999;
-}
 
 /* mobile en portrait */
 /*@media (max-width: 900px) and (orientation: portrait) {
