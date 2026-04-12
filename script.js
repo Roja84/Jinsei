@@ -6,6 +6,8 @@ const enterSound = document.getElementById("enter-sound");
 
 let isPlaying = false;
 let isScrolling = false;
+let offset = 80; // hauteur header
+/*let targetY = target.offsetTop - offset;*/
 
 document.body.style.overflow = "hidden";
 
@@ -167,7 +169,7 @@ function initScroll() {
     //});
 	
 	// NAV CLICK
-    document.querySelectorAll("nav a").forEach((link, i) => {
+    /*document.querySelectorAll("nav a").forEach((link, i) => {
         link.addEventListener("click", e => {
             e.preventDefault();
 			
@@ -191,7 +193,45 @@ function initScroll() {
             }
             });
         });
+    });*/
+	
+	document.querySelectorAll("nav a").forEach(link => {
+
+    link.addEventListener("click", e => {
+
+        e.preventDefault();
+
+        let targetId = link.getAttribute("href");
+        let target = document.querySelector(targetId);
+
+        isScrolling = true;
+
+        let targetY = target.offsetTop;
+
+        gsap.to(window, {
+            scrollTo: {
+                y: targetY,
+                autoKill: false
+            },
+            duration: 1,
+            overwrite: true,
+            ease: "power2.inOut",
+
+            onComplete: () => {
+
+                // 🔥 correction finale ultra importante
+                window.scrollTo(0, targetY);
+
+                setTimeout(() => {
+                    isScrolling = false;
+                }, 500);
+
+            }
+        });
+
     });
+
+});
 
     document.getElementById("nav-indicator").style.opacity = "1";
 
@@ -285,7 +325,7 @@ materials.forEach((mat, index) => {
 const sections = document.querySelectorAll(".panel");
 const navLinks = document.querySelectorAll("nav a");
 
-window.addEventListener("scroll", (e) => {
+/*window.addEventListener("scroll", (e) => {
 	
 	if (isScrolling) return; // 🔥 bloque pendant animation
 
@@ -302,6 +342,29 @@ window.addEventListener("scroll", (e) => {
         }
 
     });
+
+});*/
+
+window.addEventListener("scroll", () => {
+
+    if (isScrolling) return;
+
+    let currentSection = null;
+    let minDistance = Infinity;
+
+    sections.forEach((section, i) => {
+
+        let distance = Math.abs(section.offsetTop - window.scrollY -10);
+
+        if (distance < minDistance) {
+            minDistance = distance;
+            currentSection = i;
+        }
+
+    });
+
+    navLinks.forEach(link => link.classList.remove("active"));
+    navLinks[currentSection].classList.add("active");
 
 });
 
